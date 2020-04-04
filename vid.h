@@ -16,6 +16,7 @@
  * @brief   TODO
  */
 
+#include <climits>
 #include <cmath>
 #include <cstring>
 #include <vector>
@@ -31,5 +32,10 @@
 #define TAG_1 1
 // Flag for measuring the elapsed time in the sorting algorithm
 #define MEASURE_TIME
+#define INT_UNIT sizeof(int)
+#define FLOAT_UNIT sizeof(float)
+#define BOOL_UNIT sizeof(bool)
+#define NEXT_POWER_2(x) ((1ULL << sizeof(x) * CHAR_BIT) >> __builtin_clz(x - 1))
+#define FLOAT_MIN -999999.99
 
 using namespace std;

@@ -15,6 +15,8 @@ POINTS_NUMBER=${#ARR[@]}
 
 # shellcheck disable=SC2006
 PROCESSORS=`python3 -c "from scipy import optimize; import scipy; print(int(scipy.floor(scipy.optimize.fsolve(lambda x: $POINTS_NUMBER - scipy.log2(x) * x, 5)[0])))"`
+# shellcheck disable=SC2004
+PROCESSORS=$(($POINTS_NUMBER))
 
 # compile source code
 mpic++ --prefix /usr/local/share/OpenMPI -o vid vid.cpp
